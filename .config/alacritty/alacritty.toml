@@ -1,0 +1,51 @@
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Gruvbox-Dark.toml"
+]
+
+[window]
+opacity = 0.5
+blur = true
+
+  [window.padding]
+  x = 3
+  y = 3
+
+[cursor]
+blink_timeout = 0
+blink_interval = 500
+thickness = 0.15
+
+  [cursor.style]
+  blinking = "Always"
+  shape = "Beam"
+
+[font]
+size = 11
+
+  [font.normal]
+  family = "JetBrainsMonoNerdFontMono"
+  style = "SemiBold"
+
+  [font.bold]
+  family = "JetBrainsMonoNerdFontMono"
+  style = "Extra Bold"
+
+  [font.italic]
+  family = "JetBrainsMonoNerdFontMono"
+  style = "SemiBold Italic"
+
+  [font.bold_italic]
+  family = "JetBrainsMonoNerdFontMono"
+  style = "Extra Bold Italic"
+
+[colors]
+# transparent_background_colors = true
+
+[mouse]
+hide_when_typing = true
+
+[terminal]
+osc52 = "CopyPaste"
+
+[selection]
+save_to_clipboard = true
