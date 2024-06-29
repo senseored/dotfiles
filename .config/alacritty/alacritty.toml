@@ -20,22 +20,22 @@ thickness = 0.15
   shape = "Beam"
 
 [font]
-size = 11
+size = 10
 
   [font.normal]
-  family = "JetBrainsMonoNerdFontMono"
+  family = "JetBrainsMonoNerdFont"
   style = "SemiBold"
 
   [font.bold]
-  family = "JetBrainsMonoNerdFontMono"
+  family = "JetBrainsMonoNerdFont"
   style = "Extra Bold"
 
   [font.italic]
-  family = "JetBrainsMonoNerdFontMono"
+  family = "JetBrainsMonoNerdFont"
   style = "SemiBold Italic"
 
   [font.bold_italic]
-  family = "JetBrainsMonoNerdFontMono"
+  family = "JetBrainsMonoNerdFont"
   style = "Extra Bold Italic"
 
 [colors]
