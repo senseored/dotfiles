@@ -1,5 +1,5 @@
 import = [
-  "/usr/lib/node_modules/alacritty-themes/themes/Gruvbox-Dark.toml"
+  "~/.config/alacritty/themes/themes/gruvbox_material_dark_hard.toml"
 ]
 
 [window]
@@ -28,7 +28,7 @@ size = 10
 
   [font.bold]
   family = "JetBrainsMonoNerdFont"
-  style = "Extra Bold"
+  style = "ExtraBold"
 
   [font.italic]
   family = "JetBrainsMonoNerdFont"
@@ -36,7 +36,7 @@ size = 10
 
   [font.bold_italic]
   family = "JetBrainsMonoNerdFont"
-  style = "Extra Bold Italic"
+  style = "ExtraBold Italic"
 
 [colors]
 # transparent_background_colors = true
