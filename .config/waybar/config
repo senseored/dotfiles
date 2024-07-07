@@ -1,14 +1,15 @@
 {
-    "layer": "top",
-    "height": 30,
-    "spacing": 3,
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
     
-    
-    "modules-left": ["group/group-power","group/group-hardware","tray"], 
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["group/group-status","clock"],
+    "height": 15, // Waybar height (to be removed for auto height)
+    // Archived modules
+    // "custom/gpu",  "custom/weather","sway/window", "custom/gpu",  "custom/media",  
+    // Choose the order of the modules
 
-    // Modules configuration
+    "modules-left": ["tray", "custom/arrow1", "cpu", "memory", "custom/arrow2", "idle_inhibitor", "custom/arrow3",  "custom/playerctl"],
+    "modules-center": ["custom/arrow4", "hyprland/workspaces", "custom/arrow5"],
+    "modules-right": ["custom/arrow6", "network", "bluetooth", "custom/arrow7", "pulseaudio", "custom/arrow8", "clock"],
 
     "hyprland/workspaces": {
     "format": "{icon}",
@@ -36,7 +37,71 @@
     "sort-by-number": true
     },
 
+    
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Home",
+            "2": "Work",
+            "3": "Music",
+            "4": "Game",
+            "5": "Slush",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50, 
+        "tooltip": false
+    },
+  "bluetooth": {
+	  "format": "",
+	  "format-connected": "",
+	  "format-connected-battery": " {device_battery_percentage}%",
+	  // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
 
+    "sway/language": {
+        "format": " {}",
+        "max-length": 5,
+        "min-length": 4,        
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": "true"
+    },
+    "tray": {
+        //"icon-size": 14,
+        "spacing": 5,
+        "show-passive-items": true
+    },
+    "clock#time": {
+        "interval": 10,
+        "format": "  {:%H:%M}",
+        "tooltip": false
+    },
+    "clock#date": {
+        "interval": 20,
+        "format": "{: %a %e/%m}",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        //"today-format": "<b>{}</b>",
+    },    
     "clock": {
         "format": "󰥔 {:%H:%M   %d-%m-%Y}",
         "format-alt": "󰥔 {:%H:%M}",
@@ -65,25 +130,37 @@
             "on-scroll-down": "shift_up"
          }
     },
-
-    "tray": {
-        "spacing": 10,
-        "show-passive-items": true
-      },
-
-    "user": {
-        "format": "{work_d}:{work_H}:{work_M}",
-        "interval": 30,
-        "height": 30,
-        "width": 30,
-        "icon": true,
+    "temperature": {
+        //"thermal-zone": 1,
+        "interval": "1",
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 75,
+        "format-critical": "  {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "max-length": 8,
+        "min-length": 7,
+        "tooltip": false
     },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "cpu": {
+        "interval": 5,      
+        "format": " {usage:2}%",
+        "on-click": "kitty -e htop --sort-key PERCENT_CPU",
+        "tooltip": false
     },
-
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10
+  },
+    "custom/gpu": {
+      "exec": "$HOME/.config/waybar/custom_modules/custom-gpu-lite.sh",
+      "return-type": "json",
+      "format": " {}",
+      "interval": 5,
+      "tooltip": "{tooltip}",
+      "on-click": "powerupp"
+    },     
     "network": {
         "format-wifi": "",
         "format-ethernet": "󰈀",
@@ -92,98 +169,132 @@
         "format-disconnected": "󰌙",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
+    "custom/kdeconnect": {
+      "exec": "$HOME/.config/waybar/custom_modules/custom-kdeconnect.sh battery",
+      "format": " {}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/custom_modules/custom-kdeconnect.sh ring"
+    },   
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {icon} {volume}%",
-        "format-bluetooth-muted": " 󰝟",
-        "format-muted": "󰝟",
+        "scroll-step": 3, // %, can be a float
+        "format": "{icon} {volume:2}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "<span color=\"#fb4833\"></span>",
         "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
             "default": ["", "", ""]
         },
-        
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+    "custom/pacman": {
+        "format": "<big>􏆲</big>  {}",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "kitty -e 'yay'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "max-length": 5,
+        "min-length": 3
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "interval": 3600
+    },
+    "custom/cpugovernor": {
+      "format": "{icon}",
+      "interval": "once",
+      "return-type": "json",
+      "exec": "$HOME/.config/waybar/custom_modules/cpugovernor.sh",
+      "min-length": 2,
+      "max-length": 3,
+      "signal": 8,
+        "format-icons": {
+            "perf": "",
+            "ondemand": ""
+        },
+        "on-click": "$HOME/.config/waybar/custom_modules/cpugovernor.sh switch"
+        // Requires cpupower to switch governors
+    },
+    "custom/playerctl": {
+        "exec": "$HOME/.config/waybar/custom_modules/media-player-status.py",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "󰎆"
+        },
+        "escape": false,
+        "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on 
+    },
+    "custom/scratchpad-indicator": {
+        "interval": 3,
+        "return-type": "json",
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
+        "format": "{} 􏠜",
+        "on-click": "exec swaymsg 'scratchpad show'",
+        "on-click-right": "exec swaymsg 'move scratchpad'"
+    },
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
     },
 
-  "bluetooth": {
-	  "format": "",
-	  "format-connected": "",
-	  "format-connected-battery": " {device_battery_percentage}%",
-	  // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-  },
-
-    
-  "custom/changewaybar": {
-    "on-click": "~/.bin/change-waybar-hyprland",
-    "tooltip": true,
-    "tooltip-format": "Swap between waybar configs",
-    "format": " CW "
-  },
-
-  "cpu": {
-    "interval": 10,
-    "format": " {}%",
-    "max-length": 10
-  },
-
-  "memory": {
-    "interval": 30,
-    "format": " {}%",
-    "max-length": 10
-  },
-
-  "group/group-power": {
-    "orientation": "inherit",
-    "children-class": "not-power",
-    "drawer": {
-        "transition-duration": 250,
-        "transition-left-to-right": true,
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
     },
-    "modules": [
-        "user",
-        "custom/power", // First element is the "group leader" and won't ever be hidden
-        "custom/reboot",
-        "custom/lock",
-        "custom/quit",
-    ]
-},
-"custom/quit": {
-    "format": "󱋑",
-    "tooltip": false,
-    "on-click": "systemctl suspend"
-},
-"custom/lock": {
-    "format": "󰶐 ",
-    "tooltip": false,
-    "on-click": "hyprctl dispatch dpms off"
-},
-"custom/reboot": {
-    "format": "󰜉",
-    "tooltip": false,
-    "on-click": "reboot"
-},
-"custom/power": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "shutdown now"
-},
-  "group/group-status": {
-      "orientation": "inherit",
-      "modules": [
-        "network",
-        "bluetooth",
-        "pulseaudio"
-      ]
-  },
-  "group/group-hardware": {
-       "orientation": "inherit",
-       "modules": [
-          "cpu",
-          "memory"
-       ]
-    }
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
+    } 
 }
