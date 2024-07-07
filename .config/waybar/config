@@ -36,32 +36,6 @@
     },
     "sort-by-number": true
     },
-
-    
-    // Modules configuration
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "Home",
-            "2": "Work",
-            "3": "Music",
-            "4": "Game",
-            "5": "Slush",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/window": {
-        "format": "{}",
-        "max-length": 50, 
-        "tooltip": false
-    },
   "bluetooth": {
 	  "format": "",
 	  "format-connected": "",
@@ -72,12 +46,6 @@
 	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   },
-
-    "sway/language": {
-        "format": " {}",
-        "max-length": 5,
-        "min-length": 4,        
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -103,7 +71,7 @@
         //"today-format": "<b>{}</b>",
     },    
     "clock": {
-        "format": "󰥔 {:%H:%M   %d-%m-%Y}",
+        "format": " {:%d-%m-%Y  󰥔 %H:%M}",
         "format-alt": "󰥔 {:%H:%M}",
         "tooltip-format": "{calendar}",
         "interval": 5,

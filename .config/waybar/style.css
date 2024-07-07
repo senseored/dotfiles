@@ -297,6 +297,11 @@ window#waybar.hidden {
     color: @font_gruv_normal;
 }
 
+#clock-calendar {
+    font-size: 9pt;
+    color: @font_gruv_normal;
+}
+
 #custom-scratchpad-indicator {
     background: @bluetint;
     color: @font_gruv_normal;
