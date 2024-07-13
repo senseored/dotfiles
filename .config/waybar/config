@@ -71,7 +71,7 @@
         //"today-format": "<b>{}</b>",
     },    
     "clock": {
-        "format": " {:%d-%m-%Y  󰥔 %H:%M}",
+        "format": " {:%Y-%m-%d  󰥔 %H:%M}",
         "format-alt": "󰥔 {:%H:%M}",
         "tooltip-format": "{calendar}",
         "interval": 5,

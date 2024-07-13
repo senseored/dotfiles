@@ -245,25 +245,70 @@ require('lazy').setup({
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
-
-  { -- Useful plugin to show you pending keybinds.
+  {
     'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>b'] = { name = '[B]uffers', _ = 'which_key_ignore' },
-        ['<leader>o'] = { name = '[O]bsidian', _ = 'which_key_ignore' },
-      }
-    end,
+    event = 'VeryLazy',
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        '<leader>?',
+        function()
+          require('which-key').show { global = false }
+        end,
+        desc = 'Buffer Local Keymaps (which-key)',
+      },
+    },
   },
+  -- { -- Useful plugin to show you pending keybinds.
+  --   'folke/which-key.nvim',
+  --   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+  --   config = function() -- This is the function that runs, AFTER loading
+  --     require('which-key').setup()
+  --
+  --     -- Document existing key chains
+  --     require('which-key').register {
+  --       -- { '', group = '[D]ocument' },
+  --       -- { '', group = '[W]orkspace' },
+  --       -- { '', desc = '<leader>s_', hidden = true },
+  --       -- { '', desc = '<leader>w_', hidden = true },
+  --       -- { '', desc = '<leader>b_', hidden = true },
+  --       -- { '', group = '[B]uffers' },
+  --       -- { '', group = '[C]ode' },
+  --       -- { '', group = '[S]earch' },
+  --       -- { '', group = '[R]ename' },
+  --       -- { '', desc = '<leader>d_', hidden = true },
+  --       -- { '', desc = '<leader>r_', hidden = true },
+  --       -- { '', group = '[O]bsidian' },
+  --       -- { '', desc = '<leader>o_', hidden = true },
+  --       -- { '', desc = '<leader>c_', hidden = true },
+  --       { '<leader>b', name = '[B]uffers' },
+  --       { '<leader>b_', hidden = true },
+  --       { '<leader>c', group = '[C]ode' },
+  --       { '<leader>c_', hidden = true },
+  --       { '<leader>d', group = '[D]ocument' },
+  --       { '<leader>d_', hidden = true },
+  --       { '<leader>o', group = '[O]bsidian' },
+  --       { '<leader>o_', hidden = true },
+  --       { '<leader>r', group = '[R]ename' },
+  --       { '<leader>r_', hidden = true },
+  --       { '<leader>s', group = '[S]earch' },
+  --       { '<leader>s_', hidden = true },
+  --       { '<leader>w', group = '[W]orkspace' },
+  --       { '<leader>w_', hidden = true },
+  --       -- ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+  --       -- ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+  --       -- ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+  --       -- ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+  --       -- ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  --       -- ['<leader>b'] = { name = '[B]uffers', _ = 'which_key_ignore' },
+  --       -- ['<leader>o'] = { name = '[O]bsidian', _ = 'which_key_ignore' },
+  --     }
+  --   end,
+  -- },
 
   -- NOTE: Plugins can specify dependencies.
   --
@@ -825,21 +870,37 @@ require('lazy').setup({
     -- default lazy.nvim defined Nerd Font icons otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
+      config = '',
+      event = '󱁖',
+      ft = '󰩉',
       init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      keys = '',
+      plugin = '',
+      runtime = '󰥔',
+      require = '',
+      source = '󰘬',
+      start = '',
+      task = '',
+      lazy = '󰒲 ',
     },
   },
 })
+require('which-key').add {
+  { '<leader>b', name = '[B]uffers' },
+  { '<leader>b_', hidden = true },
+  { '<leader>c', group = '[C]ode' },
+  { '<leader>c_', hidden = true },
+  { '<leader>d', group = '[D]ocument' },
+  { '<leader>d_', hidden = true },
+  { '<leader>o', group = '[O]bsidian' },
+  { '<leader>o_', hidden = true },
+  { '<leader>r', group = '[R]ename' },
+  { '<leader>r_', hidden = true },
+  { '<leader>s', group = '[S]earch' },
+  { '<leader>s_', hidden = true },
+  { '<leader>w', group = '[W]orkspace' },
+  { '<leader>w_', hidden = true },
+}
 
 vim.notify = require 'notify'
 -- The line beneath this is called `modeline`. See `:help modeline`

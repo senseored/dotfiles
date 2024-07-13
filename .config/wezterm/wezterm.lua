@@ -156,7 +156,7 @@ config.key_tables = {
 }
 config.disable_default_key_bindings = true
 
-config.font = wezterm.font("JetBrainsMonoNerdFont", { weight = "DemiBold" })
+config.font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" })
 config.font_size = 10
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 config.color_scheme = "GruvboxDark"
@@ -164,8 +164,9 @@ config.color_scheme = "GruvboxDark"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.window_background_opacity = 0.5
-config.enable_wayland = false
--- config.front_end = "WebGpu"
+-- config.enable_wayland = false
+config.enable_wayland = true
+config.front_end = "WebGpu"
 -- config.font_antialias = "Subpixel" -- None, Greyscale, Subpixel
 -- config.font_hinting = "Full" -- None, Vertical, VerticalSubpixel, Full
 -- config.enable_tab_bar = false
@@ -182,7 +183,7 @@ config.window_frame = {
 	-- Whatever font is selected here, it will have the
 	-- main font setting appended to it to pick up any
 	-- fallback fonts you may have used there.
-	font = wezterm.font("JetBrainsMonoNerdFont", { weight = "DemiBold" }),
+	font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" }),
 
 	-- The size of the font in the tab bar.
 	-- Default to 10.0 on Windows but 12.0 on other systems

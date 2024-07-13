@@ -13,6 +13,17 @@ return {
     config = function()
       require('dashboard').setup {
         -- config
+        -- theme = 'hyper',
+        -- config = {
+        --   week_header = {
+        --     enable,
+        --   },
+        -- },
+        theme = 'hyper',
+        config = {
+          week_header = { enable = true },
+          footer = {}, --your footer
+        },
       }
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } },
