@@ -76,6 +76,15 @@ config.keys = {
 	{ key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	{ key = "-", mods = "LEADER", action = wezterm.action.ShowLauncher },
+	{ key = "PageUp", mods = "SHIFT", action = act.ScrollByPage(-1) },
+	{ key = "PageDown", mods = "SHIFT", action = act.ScrollByPage(1) },
+	{ key = "U", mods = "SHIFT|CTRL", action = act.ScrollByPage(-0.5) },
+	{ key = "D", mods = "SHIFT|CTRL", action = act.ScrollByPage(0.5) },
+	{
+		key = "H",
+		mods = "SHIFT|CTRL",
+		action = act.Search("CurrentSelectionOrEmptyString"),
+	},
 }
 
 config.key_tables = {
