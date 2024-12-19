@@ -1,0 +1,8 @@
+ls
+exa
+eza
+la
+ls
+nvim .config/wezterm/wezterm.lua
+exit
+ls

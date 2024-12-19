@@ -189,8 +189,8 @@ plugins {
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
-    // compact-bar location="zellij:compact-bar"
-    compact-bar location="zellij:tab-bar"
+    compact-bar location="zellij:compact-bar"
+    // compact-bar location="zellij:tab-bar"
     session-manager location="zellij:session-manager"
     welcome-screen location="zellij:session-manager" {
         welcome_screen false
@@ -220,7 +220,8 @@ ui {
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+// simplified_ui true
+simplified_ui false
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -306,7 +307,9 @@ theme "gruvbox-dark"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
+// default_layout "/home/sensy/.config/zellij/layouts/sensy.kdl"
+default_layout "sensy"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -368,7 +371,7 @@ default_layout "compact"
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "/home/sensy/.config/zellij/layouts"
 
 // The folder in which Zellij will look for themes
 //

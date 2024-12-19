@@ -18,6 +18,8 @@ wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(name or "")
 end)
 
+config.default_prog = { "/usr/bin/nu", "-l" }
+
 config.leader = { key = "a", mods = "CTRL|ALT" }
 config.keys = {
 	-- CTRL+SHIFT+Space, followed by 'r' will put us in resize-pane
@@ -53,6 +55,7 @@ config.keys = {
 	{ key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
+	{ key = "p", mods = "LEADER", action = act.PasteFrom("Clipboard") },
 	{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
@@ -84,6 +87,14 @@ config.keys = {
 		key = "H",
 		mods = "SHIFT|CTRL",
 		action = act.Search("CurrentSelectionOrEmptyString"),
+	},
+}
+
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = "Middle" } },
+		mods = "NONE",
+		action = act.PasteFrom("Clipboard"),
 	},
 }
 
@@ -165,8 +176,11 @@ config.key_tables = {
 }
 config.disable_default_key_bindings = true
 
-config.font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" })
-config.font_size = 10
+-- config.font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" })
+config.font = wezterm.font("JetBrainsMonoNerdFontMono")
+config.font_size = 9.2
+-- config.font_size = 10.2
+-- config.font_size = 6.
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 config.color_scheme = "GruvboxDark"
 -- config.color_scheme = "GruvboxDarkHard"
