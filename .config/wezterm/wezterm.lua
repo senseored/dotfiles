@@ -17,10 +17,14 @@ wezterm.on("update-right-status", function(window, pane)
 	end
 	window:set_right_status(name or "")
 end)
+config = {
+	max_fps = 165,
+}
 
 config.default_prog = { "/usr/bin/nu", "-l" }
 
-config.leader = { key = "a", mods = "CTRL|ALT" }
+-- config.leader = { key = "a", mods = "CTRL|ALT" }
+config.leader = { key = "b", mods = "CTRL" }
 config.keys = {
 	-- CTRL+SHIFT+Space, followed by 'r' will put us in resize-pane
 	-- mode until we cancel that mode.
@@ -45,17 +49,21 @@ config.keys = {
 	-- 	}),
 	-- },
 
-	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
+	{ key = "b", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
 	{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 	{
 		key = "\\",
 		mods = "LEADER",
 		action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 	},
-	{ key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "v", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+	{ key = "s", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "n", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = 1 }) },
+	{ key = "p", mods = "LEADER", action = wezterm.action({ ActivateTabRelative = -1 }) },
+	-- { key = "n", mods = "LEADER", action = "ActivateNextTab" },
+	-- { key = "p", mods = "LEADER", action = "ActivateLastTab" },
 	{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
-	{ key = "p", mods = "LEADER", action = act.PasteFrom("Clipboard") },
+	{ key = "P", mods = "LEADER|SHIFT", action = act.PasteFrom("Clipboard") },
 	{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
 	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
@@ -88,6 +96,7 @@ config.keys = {
 		mods = "SHIFT|CTRL",
 		action = act.Search("CurrentSelectionOrEmptyString"),
 	},
+	{ key = "Enter", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
 }
 
 config.mouse_bindings = {
@@ -148,6 +157,7 @@ config.key_tables = {
 			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 		},
 		{ key = "s", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		{ key = "h", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 		{ key = "v", mods = "LEADER", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 		{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
 		{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
@@ -170,14 +180,15 @@ config.key_tables = {
 		{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
 		{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
 		{ key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+		-- { key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	},
 }
 config.disable_default_key_bindings = true
 
 -- config.font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" })
-config.font = wezterm.font("JetBrainsMonoNerdFontMono")
+config.font = wezterm.font("JetBrainsMonoNerdFont")
+-- config.font = wezterm.font("JetBrainsMonoNerdFontMono")
 config.font_size = 9.2
 -- config.font_size = 10.2
 -- config.font_size = 6.
@@ -186,7 +197,7 @@ config.color_scheme = "GruvboxDark"
 -- config.color_scheme = "GruvboxDarkHard"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "Gruvbox Dark (Gogh)"
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.7
 -- config.enable_wayland = false
 config.enable_wayland = true
 config.front_end = "WebGpu"
@@ -196,9 +207,15 @@ config.front_end = "WebGpu"
 config.freetype_load_flags = "NO_HINTING|MONOCHROME"
 config.freetype_load_target = "Light"
 config.use_fancy_tab_bar = false
+-- config.use_fancy_tab_bar = true
 config.cursor_blink_rate = 800
 config.hide_tab_bar_if_only_one_tab = true
-
+config.window_padding = {
+	left = 2,
+	right = 2,
+	top = 2,
+	bottom = 2,
+}
 config.window_frame = {
 	-- The font used in the tab bar.
 	-- Roboto Bold is the default; this font is bundled
@@ -206,7 +223,8 @@ config.window_frame = {
 	-- Whatever font is selected here, it will have the
 	-- main font setting appended to it to pick up any
 	-- fallback fonts you may have used there.
-	font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" }),
+	-- font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" }),
+	font = wezterm.font("JetBrainsMonoNerdFont", { weight = "DemiBold" }),
 
 	-- The size of the font in the tab bar.
 	-- Default to 10.0 on Windows but 12.0 on other systems
@@ -220,7 +238,28 @@ config.window_frame = {
 	-- the window is not focused
 	inactive_titlebar_bg = "#333333",
 }
-
+wezterm.on("user-var-changed", function(window, pane, name, value)
+	local overrides = window:get_config_overrides() or {}
+	if name == "ZEN_MODE" then
+		local incremental = value:find("+")
+		local number_value = tonumber(value)
+		if incremental ~= nil then
+			while number_value > 0 do
+				window:perform_action(wezterm.action.IncreaseFontSize, pane)
+				number_value = number_value - 1
+			end
+			overrides.enable_tab_bar = false
+		elseif number_value < 0 then
+			window:perform_action(wezterm.action.ResetFontSize, pane)
+			overrides.font_size = nil
+			overrides.enable_tab_bar = true
+		else
+			overrides.font_size = number_value
+			overrides.enable_tab_bar = false
+		end
+	end
+	window:set_config_overrides(overrides)
+end)
 config.colors = {
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
@@ -229,7 +268,7 @@ config.colors = {
 }
 config.inactive_pane_hsb = {
 	saturation = 0.9,
-	brightness = 0.8,
+	brightness = 0.9,
 }
 return config
 

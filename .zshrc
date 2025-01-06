@@ -29,3 +29,7 @@ alias zelle="zellij -l strider"
 alias sshpi="ssh sensy@192.168.69.118"
 
 eval "$(starship init zsh)"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

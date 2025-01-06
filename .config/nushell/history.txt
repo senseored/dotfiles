@@ -6,3 +6,413 @@ ls
 nvim .config/wezterm/wezterm.lua
 exit
 ls
+nu.env-path
+.nu.env-path
+sudo nu.env.path
+nvim .config/nushell/env.nu
+ls
+lz
+eza
+ls
+la
+ls
+ls -a 
+eza
+eza --grid --icons --header --git
+eza -all --grid --icons --header --git
+exa -all --icons --header --git
+ls
+la
+ls -a
+exa -all --grid --icons --header --git
+la
+ls
+grep
+grep --helt
+grep --help
+grep --color=auto --help
+grep -d
+ls
+cd 1
+ls 1
+ls
+ls | sort-by size
+ls -a | sort-by size
+ls -a
+ssh sensy@192.168.69.118
+nvim .config/wezterm/wezterm.lua
+config nu
+nvim .config/nushell/config.nu
+nvim .config/nushell/env.nu
+yay
+ls -a
+la
+f
+yay
+yazi
+htop
+reboot
+nvim /bigssd/
+cd qmk_firmware/
+nvim .
+qmk compile -kb clavert -km senseored
+yay
+nvim qmk_firmware/keyboards/preonic/
+yay
+cd
+nvim .config/ghostty/config
+nvim .config/ghostty/config
+nvim .config/waybar/config
+waybar
+hyprctl layers
+waybar
+cd /bigssd/rust/
+cargo init icedtut
+cd icedtut/
+cargo add iced
+cargo run
+yay
+lf
+cargo run
+nvim .
+cd ..
+ls
+cd iced/
+ls
+lazygit
+cargo run todos
+cd examples/todos/
+cargo run
+cd ../iced/examples/todos/
+cargo run
+cd /bigssd/rust/icedtut/
+cargo run
+nvim .
+cd /bigssd/rust/icedtut/
+cargo run
+cargo add svg
+cargo run
+yay
+nvim .
+$env.config.edit_mode
+$env.config.edit_mode = 'vi'
+$env.config.edit_mode
+nvim
+nvim .config/nvim/
+yay -S lldb codelldb
+yay -S lldb
+yay -S codelldb
+rustup update
+yay
+cd /bigssd/rust/icedtut/
+cargo run
+nvim .config/nushell/
+$env.config.edit_mode
+$env.config.edit_mode = 'vi'
+$env.config.edit_mode
+$env.config.edit_mode = 'vi'
+ls -a
+fastfetch
+clear
+nvim .config/hypr/
+config --set [edit_mode vi]
+config
+config env
+$env.EDITOR
+$env.config.buffer_editor
+$env.config.buffer_editor 'nvim'
+$env.config.buffer_editor = 'nvim'
+config env
+$env.config.edit_mode
+config env
+fastfetch --help
+fastfetch
+fastfetch --help
+fastfetch --gen-config
+cd /bigssd/rust/icedtut/
+nvim .
+nvim .config/nushell/
+nvim .
+nvim .config/nvim/
+nvim .
+nvim .local/share/nvim/mason/
+nvim .
+yay -S codelldb
+yay -S codelldb-git
+yay -S codelldb
+yay -S codelldb-bin
+nvim .
+nvim .config/nvim/
+nvim .config/wezterm/
+cd /bigssd/rust/aoc24/
+cargo init day25
+cd day25
+cargo run
+nvim .
+cargo run
+cargo add itertools
+cargo run
+cd ../day22
+cargo run
+cd ../day1
+cargo run
+cd ../day2
+cargo run
+lazygit
+cd ../day3
+cargo run
+lazygit
+cargo run
+cd day4
+cd ../day4
+cargo run
+lazygit
+cd ../day5
+cargo run
+cargo run --release
+cd ../day6
+cargo run
+cargo run --release
+cd ../day7
+cargo run
+lazygit
+cd ../day14
+cargo run
+cargo run --release
+cd ../day15
+cargo run --release
+cd ../day16
+cargo run --release
+lazygit
+nvim .
+cd ../day19
+cargo run --release
+cd ../..
+cd rust
+cargo init fizzbuzz
+cd fizzbuzz/
+cargo run
+yay
+fastfetch
+yay
+cd /boot
+sudo rm -f initramfs-linux-fallback.img
+sudo rm -f initramfs-linux-zen-fallback.img
+yay
+yay -S linux-zen
+reboot
+yay
+yay -S haskell
+cd /boot
+sudo rm -f initramfs-custom.img
+yay
+yay -S linux-zen
+yay
+yay -S linux
+sudo rm -f initramfs-linux-zen-fallback.img
+yay -S linux
+yay -S linux-zen
+yay
+yay -S linux-zen-headers
+yay -S linux-zen
+yay
+reboot
+yay
+yay -S util-linux
+yay
+yay -S foot
+yay -S util-linux-libs
+yay
+yay -S gegl
+df -h
+paccache -rk 1
+yay -S paccache
+paccache -rk0
+sudo rm /var/cache/pacman/pkg/*
+yay
+yay -S pacman-contrib
+systemctl enable --now paccache.timer
+systemctl status paccache.timer
+df -h
+cd /bigssd/rust
+git clone https://github.com/senseored/aoc22
+cd aoc22
+ls
+cargo run --release
+cargo run --release 1
+cargo run --release day1
+cargo run
+cargo run 02
+nvim .
+cargo run 01
+cargo run 02
+cargo run --release 02
+cargo run --release 03
+cargo run --release 04
+cargo run --release 05
+nvim .
+nvim
+cd /bigssd/rust/aoc22
+nvim .
+nvim
+yay
+yay -S codelldb-bin
+nvim
+nvim .
+yay -S nvim
+yay -S neovim
+yay -S neovim-git
+nvim .
+yay -S neovim
+nvim .
+ls
+cd src
+nvim .
+nvim .config/nvim/init.lua
+nvim .config/nvim/lua/custom/plugins/oil.lua
+nvim .config/nvim/init.lua
+nvim .config/nvim/lua/custom/plugins/oil.lua
+nvim .
+nvim .config/nvim/lua/custom/plugins/oil.lua
+nvim
+cargo run --release 05
+cargo run --release 06
+cargo run --release 07
+as
+cargo run --release 07
+as
+cargo run --release 07
+cargo run --release 08
+cargo run --release 09
+cargo run --release 10
+nvim .
+cargo run --release 10
+nvim .
+lazygit
+yay
+nvim .
+nvim .config/hypr/
+yay -S mission-center-git
+yay
+nvim .config/nvim/
+nvim .config/nvim
+cd
+nvim .config/nvim
+yay
+yay -S nvidia-settings
+nvim /etc/sudoers
+sudo nvim /etc/sudoers
+git clone https://github.com/wotikama/nvidiafan/
+sudo chmod +x nvidiafan.sh
+./nvidiafan.sh
+nvidia
+yay -S bash xorg-xhost
+./nvidiafan.sh
+sudo nvim /etc/sudoers
+./nvidiafan.sh
+yay -S coolercontrol
+yay -S coolercontrol-bin
+yay -S python
+yay - s python-hidapi
+yay -S python-hidapi
+yay -S qmk
+yay -S python-hidapi
+yay -Runs qmk
+yay -S coolercontrol-bin
+sudo systemctl enable --now coolercontrold
+sudo nvim /etc/modprobe.d/nvidia.conf
+sudo update-initramfs -u
+sudo update initramfs -u
+mkinitcpio -P
+sudo mkinitcpio -P
+systemctl status nvidia-suspend.service
+systemctl enable --now nvidia-suspend.service
+systemctl enable nvidia-hibernate.service
+systemctl enable nvidia-resume.service
+nvim .config/hypr/keys.conf
+yay
+4+5
+(4+5)
+[4+5]
+expr 1+2
+expr 1 + 2
+expr 1 * 2
+expr 1 *2
+expr 1*2
+expr 1* 2
+expr 1 \\* 2
+expr 1 \* 2
+expr 1 "*" 2
+expr 5 "*" 2
+expr 5 / 2
+yay -S wcalc
+wcalc
+wcalc 5/2
+wcalc 5/2*(2+5)
+wcalc 5*2
+wcalc
+nvim .config/hypr/keys.conf
+yay -S qmk
+cd qmk_firmware/
+cd ..
+python3 -m pip install --user qmk
+yay -S python-qmk
+sudo pacman -S python-qmk
+yay -S qmk-git
+cd q
+cd qmk_firmware/
+ls
+qmk compile -kb clavert -km senseored
+python -m venv
+python -m venv ~/qmk_firmware/
+qmk compile -kb clavert -km senseored
+pipx install xyz
+pipx install qmk
+pipx install qmk --force
+qmk compile -kb clavert -km senseored
+source ~/qmk_firmware/
+ls
+ls -q
+ls -a
+deactivate
+python -m venv ~/qmk_firmware/
+cd ..
+python -m venv /qmk_firmware
+python -m venv qmk_firmware
+cd qmk_firmware/
+ls
+ls -a
+cd ..
+python -m venv qmk_firmware/
+source qmk_firmware/bin/activate
+qmk setup
+qmk compile -kb clavert -km senseored
+qmk_firmware/bin/pip install qmk
+cd qmk_firmware/
+qmk compile -kb clavert -km senseored
+bin/pip qmk compile -kb clavert -km senseored
+source bin/activate
+source .venv/bin/activate
+source bin/activate
+overlay use bin/activate.nu
+overlay use bin/activate
+cd bin/
+ls
+cd ..
+python -m venv
+cd ..
+python -m venv qmk_firmware/
+cd qmk_firmware/bin/
+ls -a
+nvim .config/
+cd ..
+cd
+nvim .config/nushell/
+> config --set [nu_env_dirs ["/home/sam", "/home/sam/github", "/home/sam/github/test"]]<\n>
+config --set [nu_env_dirs ["/home/sam", "/home/sam/github", "/home/sam/github/test"]]<\n>
+yay
+nvim qmk_firmware/keyboards/clavert/
+systemctl status hypridle
+nvim .config/hypr/
+nvim .config/nvim/
+cd dotfiles/
