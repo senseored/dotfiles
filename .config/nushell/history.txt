@@ -416,3 +416,8 @@ systemctl status hypridle
 nvim .config/hypr/
 nvim .config/nvim/
 cd dotfiles/
+lazygit
+yay
+yay
+nvim .config/hypr/
+yay
