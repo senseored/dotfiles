@@ -209,6 +209,8 @@ config.freetype_load_target = "Light"
 config.use_fancy_tab_bar = false
 -- config.use_fancy_tab_bar = true
 config.cursor_blink_rate = 800
+config.cursor_blink_ease_in = "Linear"
+config.cursor_blink_ease_out = "Linear"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
 	left = 2,
@@ -223,7 +225,7 @@ config.window_frame = {
 	-- Whatever font is selected here, it will have the
 	-- main font setting appended to it to pick up any
 	-- fallback fonts you may have used there.
-	-- font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "DemiBold" }),
+	-- font = wezterm.font("JetBrainsMonoNerdFontMono", { weight = "Regular" }),
 	font = wezterm.font("JetBrainsMonoNerdFont", { weight = "DemiBold" }),
 
 	-- The size of the font in the tab bar.

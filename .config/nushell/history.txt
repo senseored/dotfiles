@@ -421,3 +421,89 @@ yay
 yay
 nvim .config/hypr/
 yay
+lazygit
+yay
+rustup update
+yay
+ssh sensy@192.168.69.118
+cd
+nvim .config/hypr/
+yay
+nvim .config/hypr/
+yay
+fastfetch
+clear fastfetch
+fastfetch
+clear
+yay
+ssh sensy@192.168.69.118
+ssh sensy@192.168.69.117
+sudo ssh sensy@192.168.69.117
+yay
+cd /bigssd/rust/aoc22
+nvim .
+cargo run --release 11
+nvim .config/nvim/
+yay
+nvim .config/ghostty/config
+nvim .config/hypr/
+hyprctl devices
+yay
+reboot
+hyprctl devices
+bluetoothctl
+hyprctl devices
+b
+hyprctl devices
+nvim .config/hypr/
+mc
+yay -S ghostty
+yazi
+yazi --help
+yazi
+yay
+rustup update
+yay
+btop
+yay -S btop
+btop
+cd /bigssd/rust/aoc22
+cargo run --release 11
+nvim .
+yay
+cd ..
+cargo init typer
+cd typer
+cd ..
+cd typer/
+cargo add ratatui
+cargo add serde
+cargo run
+cargo add color-eyre
+cargo run
+cargo add crossterm
+cargo run
+cd ../ratatui-json/
+cd ..
+ls
+cd hello-ratatui/
+cargo run
+cargo add crossterm
+cargo run
+nvim .
+cargo run
+cargo run --release
+yay -S qt6-wayland
+yay -S qt5-wayland
+yay
+cargo run --release
+nvim .config/hypr/
+yay
+nvim .config/ghostty/config
+yay
+nvim .config/wezterm/wezterm.lua
+yay
+nvim .config/nvim/
+nvim .
+nvim
+cd dotfiles/
