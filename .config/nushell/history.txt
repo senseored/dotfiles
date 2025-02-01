@@ -507,3 +507,124 @@ nvim .config/nvim/
 nvim .
 nvim
 cd dotfiles/
+lazygit
+cd /bigssd/rust/iced_modules/
+cd /bigssd/rust/iced_modules/
+cargo run
+cargo run --release
+yay
+nvim .
+cargo test
+cargo run --release
+nvim .config/hypr/
+yay
+sudo LC_ALL=C.UTF-8 lscpu | grep Virtualization
+cd /bigssd/vmware/
+nvim windows-11.conf
+ls
+cd windows-11/
+ls
+cd ..
+ls -all
+ls -a
+cd windows-11/
+ls -a
+qemu-img 
+qemu-img --help
+cd ..
+ls -a
+nvim windows-11.conf
+cd windows-11/
+qemu-img --help
+qemu-img size
+qemu-img resize
+qemu-img resize disk.qcow2 +20G
+cd ..
+ls -a
+yay -S virtualbox virtualbox-host-dkms
+yay -S quickemu
+quickemu
+quickemu --vm windows-11 --display spice
+quickemu --vm windows-11.conf --display spice
+yay
+yay
+cd /bigssd/vmware/
+quickemu --vm windows-11.conf --display spice
+cd
+nvim .config/hypr/
+ls
+cd /bigssd
+ls
+cd SI_Namnstandard/
+lazygit
+cd ..
+cd
+ls
+cd Documents/
+git clone https://github.com/senseored/SI_Namnstandard
+cd ..
+cd OneDrive/
+git clone https://github.com/senseored/SI_Namnstandard
+cd SI_Namnstandard/
+nvim .
+cd /bigssd/OneDrive/
+nvim .
+cd SI_Namnstandard/
+nvim .
+nvim .config/hypr/
+cd /bigssd/OneDrive/SI_Namnstandard/
+nvim .
+lazygit
+yay
+btop
+reboot
+yay
+cd /bigssd/rust
+cargo init gpui_test
+cd gpui_test/
+cargo add gpui
+cd /bigssd/rust/gpui_test/
+cargo run
+nvim .
+nvim .config/nvim/
+yazi
+yay
+yay -S heroic-games-launcher-bin
+yay
+reboot
+yay
+cd /bigssd/rust/gpui_test/
+cd /bigssd/rust/gpui_test/
+cargo run
+nvim .
+cd ..
+ls
+cd iced-test/
+cd ../iced-test/
+cargo run --release
+cd ..
+ls
+cd iced
+nvim .
+cd ..
+cd icedtut
+cd ../icedtud
+cd ../icedtut
+nvim .
+cd ..
+ls
+cd iced_modules/
+ls
+nvim. 
+yay -S codelldb-bin
+cargo run --release
+cd ../iced_modules/
+cargo run --release
+nvim .
+nvim .
+yay
+cargo run --release
+clear
+fastfetch
+nvim .config/wezterm/wezterm.lua
+cd dotfiles/
