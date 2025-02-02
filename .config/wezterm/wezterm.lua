@@ -103,7 +103,7 @@ config.keys = {
 		key = "H",
 		mods = "LEADER|SHIFT",
 		action = act.Multiple({
-			wezterm.action({ AdjustPaneSize = { "Left", 5 } }),
+			wezterm.action({ AdjustPaneSize = { "Left", 1 } }),
 			act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		}),
 	},
@@ -111,7 +111,7 @@ config.keys = {
 		key = "J",
 		mods = "LEADER|SHIFT",
 		action = act.Multiple({
-			wezterm.action({ AdjustPaneSize = { "Down", 5 } }),
+			wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
 			act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		}),
 	},
@@ -119,7 +119,7 @@ config.keys = {
 		key = "K",
 		mods = "LEADER|SHIFT",
 		action = act.Multiple({
-			wezterm.action({ AdjustPaneSize = { "Up", 5 } }),
+			wezterm.action({ AdjustPaneSize = { "Up", 1 } }),
 			act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		}),
 	},
@@ -127,7 +127,7 @@ config.keys = {
 		key = "L",
 		mods = "LEADER|SHIFT",
 		action = act.Multiple({
-			wezterm.action({ AdjustPaneSize = { "Right", 5 } }),
+			wezterm.action({ AdjustPaneSize = { "Right", 1 } }),
 			act.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		}),
 	},
@@ -148,6 +148,8 @@ config.keys = {
 	{ key = "PageDown", mods = "SHIFT", action = act.ScrollByPage(1) },
 	{ key = "U", mods = "SHIFT|CTRL", action = act.ScrollByPage(-0.5) },
 	{ key = "D", mods = "SHIFT|CTRL", action = act.ScrollByPage(0.5) },
+	{ key = ";", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
+	{ key = ":", mods = "CTRL|SHIFT", action = act.DecreaseFontSize },
 	{
 		key = "H",
 		mods = "SHIFT|CTRL",
@@ -344,8 +346,8 @@ config.font_size = 9.2
 -- config.font_size = 10.2
 -- config.font_size = 6.
 -- config.color_scheme = "Gruvbox Material (Gogh)"
-config.color_scheme = "GruvboxDark"
--- config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "GruvboxDark"
+config.color_scheme = "GruvboxDarkHard"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "Gruvbox Dark (Gogh)"
 config.window_background_opacity = 0.7
@@ -355,14 +357,16 @@ config.front_end = "WebGpu"
 -- config.font_antialias = "Subpixel" -- None, Greyscale, Subpixel
 -- config.font_hinting = "Full" -- None, Vertical, VerticalSubpixel, Full
 -- config.enable_tab_bar = false
-config.freetype_load_flags = "NO_HINTING|MONOCHROME"
+-- config.freetype_load_flags = "NO_HINTING|MONOCHROME"
+config.freetype_load_target = "Light"
+config.default_cursor_style = "BlinkingBar"
 config.freetype_load_target = "Light"
 config.use_fancy_tab_bar = false
 -- config.use_fancy_tab_bar = true
 config.cursor_blink_rate = 800
 config.cursor_blink_ease_in = "Linear"
 config.cursor_blink_ease_out = "Linear"
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.enable_scroll_bar = true
 config.window_padding = {
@@ -419,6 +423,27 @@ config.colors = {
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
+		background = "#282828",
+		active_tab = {
+			bg_color = "#32302f",
+			fg_color = "#fbf1c7",
+		},
+		inactive_tab = {
+			bg_color = "#282828",
+			fg_color = "#928374",
+		},
+		inactive_tab_hover = {
+			bg_color = "#d65d0e",
+			fg_color = "#282828",
+		},
+		new_tab = {
+			bg_color = "#32302f",
+			fg_color = "#fbf1c7",
+		},
+		new_tab_hover = {
+			bg_color = "#fe8019",
+			fg_color = "#fbf1c7",
+		},
 	},
 }
 config.inactive_pane_hsb = {
@@ -426,13 +451,3 @@ config.inactive_pane_hsb = {
 	brightness = 0.9,
 }
 return config
-
--- return {
--- 	color_scheme = "Gruvbox Dark (Gogh)",
--- 	window_background_opacity = 0.5,
--- 	enable_wayland = false,
--- 	enable_tab_bar = false,
--- 	font = wezterm.font("JetBrainsMonoNerdFont", { weight = "DemiBold" }),
--- 	font_size = 10,
--- 	cursor_blink_rate = 800,
--- }

@@ -628,3 +628,21 @@ clear
 fastfetch
 nvim .config/wezterm/wezterm.lua
 cd dotfiles/
+lazygit
+cargo run --release
+nvim .config/wezterm/wezterm.lua
+nvim .
+cd
+cd qmk_firmware/
+ls
+nvim .config/wezterm/wezterm.lua
+nvim .
+yay
+yay -S hyprcursor
+yay
+cd
+cd qmk_firmware/
+reboot
+nvim .config/waybar/
+nvim .config/hypr/
+cd dotfiles/
