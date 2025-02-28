@@ -646,3 +646,56 @@ reboot
 nvim .config/waybar/
 nvim .config/hypr/
 cd dotfiles/
+lazygit
+yay
+yay
+ssh sensy@192.168.69.117
+ssh sensy@192.168.69.116
+ssh sensy@192.168.69.118
+yay
+exit
+nvim .config/nushell/
+ls
+la
+ls
+ls -a
+fastfetch
+yay
+yay -S zen-browser
+yay -S zen-browser-bin
+ssh sensy@192.168.69.118
+yay
+nvim
+yay
+reboot
+yay
+yay -S nodejs
+yay
+nvim
+yay -S electron28
+yay
+yay -S electron28
+yay -S electron28-bin
+yay -S electron30-bin
+yay
+nvm
+nvim
+cd /bigssd/rust
+git clone https://github.com/senseored/esi_iced
+git clone https://github.com/senseored/esi-iced
+cd esi-iced
+cd /bigssd/rust/esi-iced/
+cargo run --package template --release
+nvim .
+cargo run --package template --release
+nvim .
+reboot
+cd /bigssd/rust/esi-iced/
+nvin .
+cargo run --package template --release
+nvim .
+lazygit
+cargo run --package template
+cd dotfiles/
+lazygit
+nvim .
